@@ -18,13 +18,19 @@ Install dependencies (if you change `requirements.txt`):
 pip install -r /workspaces/build-applications-w-copilot-agent-mode/octofit-tracker/backend/requirements.txt
 ```
 
-Run initial migrations and start the dev server:
+Run initial migrations:
 
 ```bash
 python /workspaces/build-applications-w-copilot-agent-mode/octofit-tracker/backend/manage.py migrate
-python /workspaces/build-applications-w-copilot-agent-mode/octofit-tracker/backend/manage.py createsuperuser  # optional
-python /workspaces/build-applications-w-copilot-agent-mode/octofit-tracker/backend/manage.py runserver 0.0.0.0:8000
 ```
+
+To run the Django app, use the VS Code Run/Debug configuration:
+
+1. Open the Run and Debug panel in VS Code (Ctrl+Shift+D)
+2. Select "Launch Django Backend" from the dropdown
+3. Click the green Run button (or press F5)
+
+This will start the Django development server using the settings in `.vscode/launch.json`.
 
 Notes
 - The app uses MongoDB via `djongo`/`pymongo` per project instructions. Make sure a MongoDB service is available if you plan to configure production settings.
